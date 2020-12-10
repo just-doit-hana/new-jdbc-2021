@@ -30,6 +30,8 @@ public class HomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/src1/main/webapp/views/admin/home.jsp");
 		rd.forward(request, response);
+		//chao em anh la trang quang huy
+		//anh nho em lam do  
 	}
 
 	/**
