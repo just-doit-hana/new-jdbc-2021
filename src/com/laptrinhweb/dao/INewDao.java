@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 import com.laptrinhweb.model.NewModel;
 
-public interface INewDao {
+public interface INewDao extends GenericDao<NewModel> {
 	ArrayList<NewModel> findByCategoryId(Long CategoryID);
 }

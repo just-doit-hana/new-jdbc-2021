@@ -19,6 +19,9 @@ import com.laptrinhweb.service.INewService;
 @WebServlet( urlPatterns = { "/trang-chu"})
 public class HomeController extends HttpServlet {
 	
+	// context dependency injection (CDI) trong servlet
+	// tim hieu ve @inject la gi 
+	// cong dung hay cua tk servlet weld la dependency 
 @Inject
 	private  ICategoryService categoryService;
 
