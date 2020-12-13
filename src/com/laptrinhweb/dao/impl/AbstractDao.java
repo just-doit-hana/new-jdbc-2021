@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,8 @@ import com.laptrinhweb.dao.GenericDao;
 import com.laptrinhweb.mapper.Rowmapper;
 
 public class AbstractDao<T> implements GenericDao<T> {
+
+	private ResultSet rs;
 
 	public Connection myConnection() {
 		Connection con = null;
@@ -79,6 +82,12 @@ public class AbstractDao<T> implements GenericDao<T> {
 				else if (parameterss instanceof String ) {
 					 statement.setString(index, (String) parameterss);
 				}
+				else if (parameterss instanceof Integer) {
+					statement.setInt(index, (Integer)parameterss);
+				}
+				else if (parameterss instanceof Timestamp) {
+					statement.setTimestamp(index, (Timestamp)parameterss);
+				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -87,4 +96,129 @@ public class AbstractDao<T> implements GenericDao<T> {
 
 	}
 
+	@Override
+	public void update(String sqlString, Object... parameters) {
+		// TODO Auto-generated method stub
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			connection = myConnection();
+			connection.setAutoCommit(false);
+			statement= connection.prepareStatement(sqlString);
+			setParameter(statement, parameters);
+			statement.executeUpdate();
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO: handle exception
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch (SQLException e2) {
+					// TODO: handle exception
+					e2.printStackTrace();
+				}
+			}
+		}finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+		
+	}
+
+	@Override
+	public Long insert(String sqlString, Object... parameters) {
+		
+		// TODO Auto-generated method stub
+				Connection connection = null;
+				PreparedStatement statement = null;
+			    ResultSet rs = null ;
+				Long idLong =null;
+				try {
+					connection = myConnection();
+					connection.setAutoCommit(false);
+					statement= connection.prepareStatement(sqlString,statement.RETURN_GENERATED_KEYS);
+					setParameter(statement, parameters);
+					statement.executeUpdate();
+					rs=statement.getGeneratedKeys();
+					if (rs.next()) {
+				      idLong= rs.getLong(1);
+					}
+					connection.commit();
+					return idLong;
+				} catch (SQLException e) {
+					// TODO: handle exception
+					if (connection != null) {
+						try {
+							connection.rollback();
+						} catch (SQLException e2) {
+							// TODO: handle exception
+							e2.printStackTrace();
+						}
+					}
+				}finally {
+					try {
+						if (statement != null) {
+							statement.close();
+						}
+						if (connection != null) {
+							connection.close();
+						}
+						if (rs != null) {
+							rs.close();
+						}
+					} catch (SQLException e2) {
+						// TODO: handle exception
+						e2.printStackTrace();
+					}
+				}
+				return null;
+	}
+
+	@Override
+	public void delete(String sqlString, Object... parameters) {
+		// TODO Auto-generated method stub
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			connection = myConnection();
+			connection.setAutoCommit(false);
+			statement= connection.prepareStatement(sqlString);
+			setParameter(statement, parameters);
+			statement.executeUpdate();
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO: handle exception
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch (SQLException e2) {
+					// TODO: handle exception
+					e2.printStackTrace();
+				}
+			}
+		}finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+	}
+	}
 }
+	
+

@@ -17,5 +17,12 @@ private INewDao newDao;
 		
 		return newDao.findByCategoryId(CategoryID);
 	}
+	@Override
+	public NewModel save(NewModel news) {
+		// TODO Auto-generated method stub
+		Long newID = newDao.save(news);
+		System.out.println(newID);
+		return null;
+	}
 
 }

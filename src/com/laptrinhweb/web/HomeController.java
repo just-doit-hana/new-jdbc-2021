@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.laptrinhweb.model.NewModel;
 import com.laptrinhweb.service.ICategoryService;
 import com.laptrinhweb.service.INewService;
 
@@ -27,12 +28,21 @@ public class HomeController extends HttpServlet {
 
 @Inject
 private INewService newService;
+
 	private static final long serialVersionUID = 1L;
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Long category = 1L;
-		request.setAttribute("news",newService.findByCategoryId(category));
+		// debub chay thu NewsItems
+		// du lieu dung de test thu 
+//		String tileString  = "bai viet quang huy";
+//		String contentString="bai viet quang huy";
+//		Long cateID = 1L;
+//		NewModel newModel = new NewModel();
+//		newModel.setTitle(tileString);
+//		newModel.setContents(contentString);
+//		newModel.setCategoryId(cateID);
+//		newService.save(newModel);
 		request.setAttribute("data",categoryService.findAll());
 		
 	RequestDispatcher rd = request.getRequestDispatcher("/src1/main/webapp/views/web/home.jsp");

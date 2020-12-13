@@ -27,4 +27,81 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 	    	
 	
 	}
+
+	
+	// thao tac  
+	// JDBC cung cap cho ta mot cai transaction 
+	// dau tien thi se open transaction 
+	// them , xoa , sua 
+	 // close transaction 
+	
+	
+	//Su khac nhau giua prepared  statement (1) va statement (2) 
+	// 1 thi co the truyen tham so truc tieps trong cau sql 
+	 // 2 thi khong cos the lam dc  dieu do
+	
+	@Override
+	public Long save(NewModel news) {
+		// TODO Auto-generated method stub
+//		ResultSet resultSet = null ;
+//		Long id  = null ;
+//		Connection connection = myConnection();
+//		PreparedStatement statement =null;
+//		try {
+			String sql = "INSERT INTO news (title,content,categoryid) values(?,?,?);";
+			return insert(sql, news.getTitle(),news.getContents(),news.getCategoryId());
+			
+			
+//			connection.setAutoCommit(false);
+//		    statement = connection.prepareStatement(sql,statement.RETURN_GENERATED_KEYS); // get genrated key 
+//		 	statement.setString(1, news.getTitle());
+//			statement.setString(2, news.getContents());
+//			statement.setLong(3, news.getCategoryId());
+//			resultSet = statement.getGeneratedKeys(); // id o trong tat ca cac bang trong table  data no random  do do can su dung no 
+//			// va trong database no generate bao nhieeu thi nay bay nhiu
+//			statement.executeUpdate();
+//			if (resultSet.next()) {
+//				id= resultSet.getLong(1);
+//			} 
+//			connection.commit(); // co autocommit khi thuc khi  cac thao tac hoan tat thi moi  them vao database 
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			if ( connection!= null) {
+//				try {
+//					connection.rollback();  // neu them khong dung thi se rollback lai tu dau 
+//				} catch (SQLException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//			}
+//		}
+//		finally {
+//			if (connection != null) {
+//				try {
+//					connection.close();
+//				} catch (SQLException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//			if (resultSet != null) {
+//				try {
+//					resultSet.close();
+//				} catch (SQLException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//			if (statement != null) {
+//				try {
+//					statement.close();
+//				} catch (SQLException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+//		
+//		return null;
+	}
 }
