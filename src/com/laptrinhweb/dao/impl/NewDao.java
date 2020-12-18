@@ -104,4 +104,32 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 //		
 //		return null;
 	}
+
+	
+	// vi du finby cai gi do thi tra ve mot list 
+	// con find one cai gi do thi tra ve 1 phan tu 
+	@Override
+	public NewModel findOne(Long id) {
+		  
+		   // neu trong day co bao nhieu tham so thi ben duoi phan return cung tra ve bay nhieu tham so 
+	    	String sqlString = "select *From news  where id =?;";
+	    	List<NewModel> news = query(sqlString, new NewMapper(), id);  // chung ta chi lay 1 thuoc tinh duy nhat thoi no nam o vi tri thu 0 trong list 
+			return news.isEmpty() ? null :news.get(0);
+	    	
+		
+	}
+
+
+	@Override
+	public void update(NewModel update) {
+		// TODO Auto-generated method stub
+		// nhieu qua cat chuoi nen dung string buider
+		
+		StringBuilder sql = new StringBuilder( "Update table news Set title =? , thumbnail=?,");
+		sql.append("shortdescription=?,content=?,categoryid=?,");
+		sql.append("createddate=?,createdby=? where id =?;");
+		update(sql.toString(),update.getTitle(),update.getThumnail(),update.getShortDescription(),
+				update.getContents(),update.getCategoryId(),
+				update.getCreatedDate(),update.getCreatedBy(),update.getId());
+	}
 }

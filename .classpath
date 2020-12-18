@@ -9,10 +9,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/tranquanghuy/Downloads/jackson-annotations-2.9.8.jar"/>
-	<classpathentry kind="lib" path="/Users/tranquanghuy/Downloads/jackson-core-2.9.8-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/tranquanghuy/Downloads/jackson-core-asl-1.9.13.jar"/>
-	<classpathentry kind="lib" path="/Users/tranquanghuy/Downloads/jackson-databind-2.10.2.jar"/>
-	<classpathentry kind="lib" path="/Users/tranquanghuy/Downloads/jackson-mapper-asl-1.9.13.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

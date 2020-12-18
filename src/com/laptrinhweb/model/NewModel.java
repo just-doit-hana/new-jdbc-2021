@@ -1,5 +1,7 @@
 package com.laptrinhweb.model;
 
+import java.sql.Timestamp;
+
 public class NewModel extends AbstractModel {
 
 	private Long id;
@@ -8,6 +10,42 @@ public class NewModel extends AbstractModel {
 	private String shortDescription;
 	private String contents;
 	private Long categoryId;
+	private Timestamp createdDate;
+	private Timestamp modifiedDate;
+	private String createdBy;
+	private String modifiedBy;
+
+	public Timestamp getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Timestamp createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Timestamp getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Timestamp modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
 
 	public NewModel() {
 	}
@@ -59,8 +97,4 @@ public class NewModel extends AbstractModel {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
-	
-
 }
