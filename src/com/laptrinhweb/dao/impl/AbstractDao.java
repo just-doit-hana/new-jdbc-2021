@@ -88,10 +88,10 @@ public class AbstractDao<T> implements GenericDao<T> {
 				else if (parameterss instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp)parameterss);
 				}
-				else if (parameterss ==null) {
-					
-					statement.setNull(index, java.sql.Types.NULL);
-				}
+//				else if (parameterss ==null) {
+//					
+//					statement.setNull(index, java.sql.Types.NULL);
+//				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

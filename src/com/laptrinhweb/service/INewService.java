@@ -9,4 +9,5 @@ public interface INewService {
 	ArrayList<NewModel> findByCategoryId(Long CategoryID);
 	NewModel save(NewModel news);
 	NewModel update(NewModel updateNews);
+	void delete (Long[] ids);
 }

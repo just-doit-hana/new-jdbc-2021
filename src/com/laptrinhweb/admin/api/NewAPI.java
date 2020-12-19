@@ -38,19 +38,22 @@ public class NewAPI extends HttpServlet {
 		mapper.writeValue(response.getOutputStream(), newModel);// tra ve cho client tu phia server 
 	}
 protected void doPut(HttpServletRequest request , HttpServletResponse response) throws IOException {
-	ObjectMapper mapper = new  ObjectMapper();
+	ObjectMapper mapper = new  ObjectMapper();// luon luon phai co 
 	request.setCharacterEncoding("UTF-8");// set  kieu chu de server biet dc tieng viet 
 	response.setContentType("application/json"); // tra ve giong du lieu giong client 
 	NewModel updateNews = HttpUtil.of(request.getReader()).toModel(NewModel.class);
 	updateNews=newService.update(updateNews);
 	System.out.println(updateNews);
 	mapper.writeValue(response.getOutputStream(), updateNews);// tra ve cho client tu phia server 
-	
 	}
-//protected void doDelete(HttpServletRequest request , HttpServletResponse response) {
-//	
-//}
-private void saveForUpdate() {
-	
-}
+
+    protected void doDelete(HttpServletRequest request , HttpServletResponse response) throws IOException {
+    	ObjectMapper mapper = new  ObjectMapper();// luon luon phai co 
+    	request.setCharacterEncoding("UTF-8");// set  kieu chu de server biet dc tieng viet 
+    	response.setContentType("application/json"); // tra ve giong du lieu giong client 
+    	NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
+    	newService.delete(newModel.getIds());
+    	mapper.writeValue(response.getOutputStream(), "{}");
+         }
+
 }

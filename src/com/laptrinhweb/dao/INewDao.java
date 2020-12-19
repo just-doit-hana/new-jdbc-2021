@@ -10,5 +10,5 @@ public interface INewDao extends GenericDao<NewModel> {
 	Long save(NewModel news);
 	NewModel  findOne(Long id);
 	void update(NewModel update);
-	
+	void delete(long id);
 }

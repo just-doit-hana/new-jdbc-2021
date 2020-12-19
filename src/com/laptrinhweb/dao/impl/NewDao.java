@@ -48,7 +48,8 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 //		Connection connection = myConnection();
 //		PreparedStatement statement =null;
 //		try {
-			String sql = "INSERT INTO news (title,content,categoryid) values(?,?,?);";
+     String	sql = "INSERT INTO news (title,content,categoryid) values(?,?,?);";
+		
 			return insert(sql, news.getTitle(),news.getContents(),news.getCategoryId());
 			
 			
@@ -119,17 +120,25 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 		
 	}
 
-
 	@Override
 	public void update(NewModel update) {
 		// TODO Auto-generated method stub
 		// nhieu qua cat chuoi nen dung string buider
 		
-		StringBuilder sql = new StringBuilder( "Update table news Set title =? , thumbnail=?,");
+		StringBuilder sql = new StringBuilder( "Update news Set title =? , thumbnail=?,");
 		sql.append("shortdescription=?,content=?,categoryid=?,");
 		sql.append("createddate=?,createdby=? where id =?;");
 		update(sql.toString(),update.getTitle(),update.getThumnail(),update.getShortDescription(),
 				update.getContents(),update.getCategoryId(),
 				update.getCreatedDate(),update.getCreatedBy(),update.getId());
+	}
+
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+		String sql = "Delete From news Where id=?";
+		update(sql,id);
+		
 	}
 }

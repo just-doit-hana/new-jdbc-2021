@@ -1,5 +1,6 @@
 package com.laptrinhweb.service.impl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import javax.inject.Inject;
@@ -22,6 +23,8 @@ private INewDao newDao;
 //		// TODO Auto-generated method stub
 //		Long newID = newDao.save(news);
 //		System.out.println(newID);
+		news.setCreatedDate(new Timestamp(System.currentTimeMillis())); // lay ngay hien tai cua he thong 
+		news.setCreatedBy("");
 		Long newId= newDao.save(news);
 		
 		return newDao.findOne(newId);
@@ -33,8 +36,20 @@ private INewDao newDao;
 		NewModel oldNews= newDao.findOne(updateNews.getId());
 		updateNews.setCreatedDate(oldNews.getCreatedDate());
 		updateNews.setCreatedBy(oldNews.getCreatedBy());
+		updateNews.setModifiedDate(new Timestamp(System.currentTimeMillis()));
+		updateNews.setModifiedBy("");
         newDao.update(updateNews);
 		return newDao.findOne(updateNews.getId());
+	}
+	// co 2 truong hop chon 1 cai de xoa  va chon nhieu cai de xoa 
+	@Override
+	public void delete(Long[] ids) {
+		// TODO Auto-generated method stub
+		//truoc khi xoa bai viet thi can xoa comment vi chua foreign  key  newid 
+		for (long id : ids) {
+			newDao.delete(id); // delete co nhieu truong hopj chay vong lap 
+		}
+		
 	}
 
 }

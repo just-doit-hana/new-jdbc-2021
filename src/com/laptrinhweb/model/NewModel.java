@@ -14,6 +14,14 @@ public class NewModel extends AbstractModel {
 	private Timestamp modifiedDate;
 	private String createdBy;
 	private String modifiedBy;
+    private Long[] ids;
+	public Long[] getIds() {
+		return ids;
+	}
+
+	public void setIds(Long[] ids) {
+		this.ids = ids;
+	}
 
 	public Timestamp getCreatedDate() {
 		return createdDate;
