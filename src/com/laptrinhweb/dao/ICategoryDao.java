@@ -5,6 +5,6 @@ import java.util.ArrayList;
 import com.laptrinhweb.model.CategoryModel;
 
 public interface ICategoryDao extends GenericDao<CategoryModel>{
- ArrayList<CategoryModel> findAll(); 
+ ArrayList<CategoryModel> findAll() throws ClassNotFoundException; 
 }
    

@@ -16,8 +16,15 @@ public class CategoryService implements ICategoryService {
 //		categoryDao = new CategoryDao();
 //	}
 	@Override
-	public ArrayList<CategoryModel> findAll() {
-		return categoryDao.findAll();
+	public ArrayList<CategoryModel> findAll(){
+		try {
+			return categoryDao.findAll();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
 	}
     
 }

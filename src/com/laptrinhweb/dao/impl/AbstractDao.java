@@ -16,12 +16,12 @@ public class AbstractDao<T> implements GenericDao<T> {
 
 	private ResultSet rs;
 
-	public Connection myConnection() {
+	public Connection myConnection() throws ClassNotFoundException {
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspservletjdbc", "root", "Quynh@822000");
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			// TODO: handle exception
 		}
 		return con;
@@ -29,7 +29,7 @@ public class AbstractDao<T> implements GenericDao<T> {
 	}
 
 	@Override
-	public <T> ArrayList<T> query(String sql, Rowmapper<T> rowmapper, Object... parameters) {
+	public <T> ArrayList<T> query(String sql, Rowmapper<T> rowmapper, Object... parameters) throws ClassNotFoundException {
 		List<T> results = new ArrayList<>();
 		// TODO Auto-generated method stub
 		Connection connection = null;
@@ -88,10 +88,10 @@ public class AbstractDao<T> implements GenericDao<T> {
 				else if (parameterss instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp)parameterss);
 				}
-//				else if (parameterss ==null) {
-//					
-//					statement.setNull(index, java.sql.Types.NULL);
-//				}
+				else if (parameterss ==null) {
+					
+					statement.setNull(index, java.sql.Types.NULL);
+				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -101,7 +101,7 @@ public class AbstractDao<T> implements GenericDao<T> {
 	}
 
 	@Override
-	public void update(String sqlString, Object... parameters) {
+	public void update(String sqlString, Object... parameters) throws ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -139,7 +139,7 @@ public class AbstractDao<T> implements GenericDao<T> {
 	}
 
 	@Override
-	public Long insert(String sqlString, Object... parameters) {
+	public Long insert(String sqlString, Object... parameters) throws ClassNotFoundException {
 		
 		// TODO Auto-generated method stub
 				Connection connection = null;
@@ -188,7 +188,7 @@ public class AbstractDao<T> implements GenericDao<T> {
 	}
 
 	@Override
-	public void delete(String sqlString, Object... parameters) {
+	public void delete(String sqlString, Object... parameters) throws ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -223,6 +223,14 @@ public class AbstractDao<T> implements GenericDao<T> {
 			}
 	}
 	}
+
+	@Override
+	public int count(String sqlString, Object... parameters) throws ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 }
 	
 

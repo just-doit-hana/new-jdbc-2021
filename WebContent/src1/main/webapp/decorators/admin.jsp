@@ -37,6 +37,16 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type='text/javascript' src='<c:url value="/src1/main/webapp/template/admin/js/jquery-2.2.3.min.js" />'></script>
+    <script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.2.1.1.min.js' />"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script  type='text/javascript' src="<c:url value='/src1/main/webapp/template/paging/jquery.twbsPagination.js' />"></script>
+    
+    <script src="<c:url value='/ckeditor/ckeditor.js' />"></script>
 </head>
 <body class="no-skin">
 
@@ -63,19 +73,19 @@
 		</a>
 	</div>
 	
-    <script src="<c:url value='/template/admin/assets/js/bootstrap.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery-ui.custom.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery.ui.touch-punch.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery.easypiechart.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery.sparkline.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery.flot.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery.flot.pie.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/jquery.flot.resize.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/ace-elements.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/ace.min.js' />"></script>
-	<script src="<c:url value='/template/admin/assets/js/bootstrap.min.js'/>"></script>
+    <script src="<c:url value='/src1/main/webapp/template/admin/assets/js/bootstrap.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery-ui.custom.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.ui.touch-punch.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.easypiechart.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.sparkline.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.flot.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.flot.pie.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery.flot.resize.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/ace-elements.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/ace.min.js' />"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/bootstrap.min.js'/>"></script>
 	
 	<!-- page specific plugin scripts -->
-	<script src="<c:url value='/template/admin/assets/js/jquery-ui.min.js'/>"></script>
+	<script src="<c:url value='/src1/main/webapp/template/admin/assets/js/jquery-ui.min.js'/>"></script>
 </body>
 </html>

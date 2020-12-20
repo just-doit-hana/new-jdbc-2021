@@ -2,7 +2,7 @@ package com.laptrinhweb.model;
 
 import java.sql.Timestamp;
 
-public class NewModel extends AbstractModel {
+public class NewModel extends AbstractModel<NewModel> {
 
 	private Long id;
 	private String title;

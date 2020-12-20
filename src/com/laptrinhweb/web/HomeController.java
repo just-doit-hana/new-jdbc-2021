@@ -43,10 +43,16 @@ private INewService newService;
 //		newModel.setContents(contentString);
 //		newModel.setCategoryId(cateID);
 //		newService.save(newModel);
-		request.setAttribute("data",categoryService.findAll());
+		try {
+			request.setAttribute("data",categoryService.findAll());
+			RequestDispatcher rd = request.getRequestDispatcher("/src1/main/webapp/views/web/home.jsp");
+			rd.forward(request, response);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-	RequestDispatcher rd = request.getRequestDispatcher("/src1/main/webapp/views/web/home.jsp");
-	rd.forward(request, response);
+	
 		
 	}
 }

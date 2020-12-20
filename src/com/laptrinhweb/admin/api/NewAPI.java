@@ -29,15 +29,20 @@ public class NewAPI extends HttpServlet {
 	// get -- select  , post -- them moi  , delete , put -- > cap nhat 
 	protected void doGet(HttpServletRequest request , HttpServletResponse response) throws IOException {
 		// ham them bai moi 
-		ObjectMapper mapper = new  ObjectMapper();
-		request.setCharacterEncoding("UTF-8");// set  kieu chu de server biet dc tieng viet 
-		response.setContentType("application/json"); // tra ve giong du lieu giong client 
-		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
-		newModel=newService.save(newModel);
-		System.out.println(newModel);
-		mapper.writeValue(response.getOutputStream(), newModel);// tra ve cho client tu phia server 
+		try {
+			ObjectMapper mapper = new  ObjectMapper();
+			request.setCharacterEncoding("UTF-8");// set  kieu chu de server biet dc tieng viet 
+			response.setContentType("application/json"); // tra ve giong du lieu giong client 
+			NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
+			newModel=newService.save(newModel);
+			System.out.println(newModel);
+			mapper.writeValue(response.getOutputStream(),newModel);// tra ve cho client tu phia server 
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 protected void doPut(HttpServletRequest request , HttpServletResponse response) throws IOException {
+try {
 	ObjectMapper mapper = new  ObjectMapper();// luon luon phai co 
 	request.setCharacterEncoding("UTF-8");// set  kieu chu de server biet dc tieng viet 
 	response.setContentType("application/json"); // tra ve giong du lieu giong client 
@@ -45,15 +50,22 @@ protected void doPut(HttpServletRequest request , HttpServletResponse response) 
 	updateNews=newService.update(updateNews);
 	System.out.println(updateNews);
 	mapper.writeValue(response.getOutputStream(), updateNews);// tra ve cho client tu phia server 
+} catch (Exception e) {
+	// TODO: handle exception
+}
 	}
 
     protected void doDelete(HttpServletRequest request , HttpServletResponse response) throws IOException {
+    try {
     	ObjectMapper mapper = new  ObjectMapper();// luon luon phai co 
     	request.setCharacterEncoding("UTF-8");// set  kieu chu de server biet dc tieng viet 
     	response.setContentType("application/json"); // tra ve giong du lieu giong client 
     	NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class);
     	newService.delete(newModel.getIds());
     	mapper.writeValue(response.getOutputStream(), "{}");
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
          }
 
 }

@@ -1,7 +1,7 @@
 package com.laptrinhweb.model;
 
 //su khac biet giu java class va java bean la java class khong co get set con java bean co 
-public class UserModel extends AbstractModel {
+public class UserModel extends AbstractModel<UserModel> {
 	
 	private String userName;
 	private String fullName;
