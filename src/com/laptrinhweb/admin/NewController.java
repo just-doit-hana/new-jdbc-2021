@@ -36,16 +36,36 @@ public class NewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-
+		NewModel model = new NewModel();
 //		lay tu servcevi ra 
 	try {
-		NewModel model = new NewModel();
+		String pageStr = request.getParameter("page");
+		String maxPageItem = request.getParameter("maxPageItem");
+		if (pageStr != null) {
+			model.setPage(Integer.parseInt(pageStr));
+		}
+		else {
+			model.setPage(1);
+		}
+		
+		if (maxPageItem != null) {
+			model.setMaxPageItem(Integer.parseInt(maxPageItem));
+		}
+		
+		Integer offset=(model.getPage()-1) * model.getMaxPageItem();
+		
+		model.setListResultList(newService.finAll(offset,model.getMaxPageItem()));
+		
+		model.setTotalItem(model.getTotalItem());  // total item
+		
+		model.setTotalPage((int) Math.ceil((double) model.getTotalItem()/model.getMaxPageItem()));
+		
 		request.setAttribute(SystemConstant.MODEL, model);
-		model.setListResultList(newService.finAll());
-		model.setTotalPageItem(model.getListResultList().size());  // total item
-		model.setTotalPage((int) Math.ceil((double) model.getTotalPageItem()/model.getMaxPageItem()));
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/src1/main/webapp/views/admin/new/list.jsp");
+		
 		rd.forward(request, response);
+		
 	} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

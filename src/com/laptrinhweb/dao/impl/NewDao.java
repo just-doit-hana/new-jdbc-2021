@@ -182,16 +182,17 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 
 
 	@Override
-	public ArrayList<NewModel> findAll() throws ClassNotFoundException {
-		String sqlString = "select *From news ;";
-		return  query(sqlString, new NewMapper());
+	public ArrayList<NewModel> findAll(Integer offset,Integer limit) throws ClassNotFoundException {
+		String sqlString = "select *From news limit ?,?;";
+		return  query(sqlString, new NewMapper() ,offset,limit);
 	}
 
 
 	@Override
-	public int getTotalItem() {
+	public int getTotalItem() throws ClassNotFoundException {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Select count(*)From  news;";
+		return count(sql);
 	}
 
 

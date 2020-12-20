@@ -227,6 +227,51 @@ public class AbstractDao<T> implements GenericDao<T> {
 	@Override
 	public int count(String sqlString, Object... parameters) throws ClassNotFoundException {
 		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		Connection connection = null;
+		PreparedStatement statement = null;
+	    ResultSet rs = null ;
+		int   count =0;
+		try {
+			connection = myConnection();
+			connection.setAutoCommit(false);
+			statement= connection.prepareStatement(sqlString,statement.RETURN_GENERATED_KEYS);
+			setParameter(statement, parameters);
+			statement.executeUpdate();
+			rs=statement.getGeneratedKeys();
+	while (rs.next()) {
+		// khong de 1 thi co the de count 
+//		  count = rs.getInt("count(*)");
+		     count = rs.getInt(1);
+			}
+			connection.commit();
+			return count;
+		} catch (SQLException e) {
+			// TODO: handle exception
+			if (connection != null) {
+				try {
+					connection.rollback();
+				} catch (SQLException e2) {
+					// TODO: handle exception
+					e2.printStackTrace();
+				}
+			}
+		}finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
 		return 0;
 	}
 

@@ -10,5 +10,6 @@ public interface INewService {
 	NewModel save(NewModel news) throws ClassNotFoundException;
 	NewModel update(NewModel updateNews) throws ClassNotFoundException;
 	void delete (Long[] ids) throws ClassNotFoundException;
-	ArrayList<NewModel> finAll() throws ClassNotFoundException;
+	ArrayList<NewModel> finAll(Integer offset,Integer limit) throws ClassNotFoundException;
+	int getTotalitem() throws ClassNotFoundException;
 }

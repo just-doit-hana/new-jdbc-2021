@@ -18,15 +18,12 @@ public class AbstractModel<T> {
 //	 quan ly bai viet  -- >thi tra ve list<NewModel>
 //	 quan ly comment  -- >thi tra ve list<CommentModel>
 //	 quan ly ther laoi   -- >thi tra ve list<categoryModel>
-	private int page ;
-	private int maxPageItem;  // so item trong 1 page 
-	private int  totalPage;
-	private int  totalPageItem;
+	private Integer page ;
+	private Integer maxPageItem;  // so item trong 1 page 
+	private Integer  totalPage;
+	private Integer  totalItem;
 	public Long getId() {
 		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 	public Timestamp getCreatedDate() {
 		return createdDate;
@@ -64,28 +61,33 @@ public class AbstractModel<T> {
 	public void setListResultList(List<T> listResultList) {
 		this.listResultList = listResultList;
 	}
-	public int getPage() {
+	public Integer getPage() {
 		return page;
 	}
-	public void setPage(int page) {
+	public void setPage(Integer page) {
 		this.page = page;
 	}
-	public int getMaxPageItem() {
+	public Integer getMaxPageItem() {
 		return maxPageItem;
 	}
-	public void setMaxPageItem(int maxPageItem) {
+	public void setMaxPageItem(Integer maxPageItem) {
 		this.maxPageItem = maxPageItem;
 	}
-	public int getTotalPage() {
+	public Integer getTotalPage() {
 		return totalPage;
 	}
-	public void setTotalPage(int totalPage) {
+	public void setTotalPage(Integer totalPage) {
 		this.totalPage = totalPage;
 	}
-	public int getTotalPageItem() {
-		return totalPageItem;
+	public Integer getTotalItem() {
+		return totalItem;
 	}
-	public void setTotalPageItem(int totalPageItem) {
-		this.totalPageItem = totalPageItem;
+	public void setTotalItem(Integer totalItem) {
+		this.totalItem = totalItem;
 	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 }

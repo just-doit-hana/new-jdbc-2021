@@ -56,7 +56,7 @@
         </li> --%>
 <li>
   <h6 class="dropdown-header ">Quản lý bài viết  </h6>
-  <a class="dropdown-item" href='<c:url value="/admin-new-list"/>'>Danh sách bài viết  </a>
+  <a class="dropdown-item" href='<c:url value="/admin-new-list?page=1&maxPageItem=2"/>'>Danh sách bài viết  </a>
   <a class="dropdown-item" href="#"></a>
 <li>
     </ul>

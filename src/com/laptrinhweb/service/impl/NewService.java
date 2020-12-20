@@ -56,8 +56,13 @@ private INewDao newDao;
 		}
 	}
 	@Override
-	public ArrayList<NewModel> finAll() throws ClassNotFoundException {
-		return newDao.findAll();
+	public ArrayList<NewModel> finAll(Integer offset,Integer limit) throws ClassNotFoundException {
+		return newDao.findAll(offset,limit);
+	}
+	@Override
+	public int getTotalitem() throws ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return newDao.getTotalItem();
 	}
 
 }

@@ -66,7 +66,7 @@
     $(function () {
         var totalPage=${model.totalPage};
         var curentPage=${model.page};
-        var maxPage=${model.maxPageItem};
+        /* var maxPage=${model.maxPageItem};*/
         var limit=2;
         window.pagObj = $('#pagination').twbsPagination({
             totalPages: totalPage, /*  tong page la 10 */
@@ -77,10 +77,11 @@
             }
         }).on('page', function (event, page) {
            /*  console.info(page + ' (from event listening)'); */
-            $('#maxPageItem').val(limit); 
-            $('#page').val(page);
-            $('#formSubmit').submit();
-            
+           if(curentPage!=page){
+        	   $('#maxPageItem').val(limit); 
+               $('#page').val(page);
+               $('#formSubmit').submit();
+               } 
         });
     });
 </script>
