@@ -35,7 +35,7 @@
         </div>
     </div>
     <ul class="nav nav-list">
-       <%--  <li >
+        <li >
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"></span>
@@ -45,20 +45,20 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href="'<c:url value="/admin-new?type=list&page=1&maxPageItem=2&sortName=title&sortBy=desc"/>'">
-                     <a href="'<c:url value="/admin-new-list"/>'">
+                  <!--   <a href="'<c:url value="/admin-new?type=list&page=1&maxPageItem=2&sortName=title&sortBy=desc"/>'">-->
+                 <a href='<c:url value="/admin-new?page=1&maxPageItem=2"/>'>
                         <i class="menu-icon fa fa-caret-right">  </i>
                       DS bài viết
                     </a>
                     <b class="arrow"></b>
                 </li>
             </ul>
-        </li> --%>
-<li>
+        </li> 
+<%-- <li>
   <h6 class="dropdown-header ">Quản lý bài viết  </h6>
-  <a class="dropdown-item" href='<c:url value="/admin-new-list?page=1&maxPageItem=2"/>'>Danh sách bài viết  </a>
+  <a class="dropdown-item" href='<c:url value="/admin-new?page=1&maxPageItem=2"/>'>Danh sách bài viết  </a>
   <a class="dropdown-item" href="#"></a>
-<li>
+<li> --%>
     </ul>
     <div class="sidebar-toggle sidebar-collapse">
         <i class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

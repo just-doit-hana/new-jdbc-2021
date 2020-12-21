@@ -195,11 +195,4 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 		return count(sql);
 	}
 
-
-//	@Override
-//	public int getTotalItem() {
-//		// TODO Auto-generated method stub
-//		
-//		return 0;
-//	}
 }

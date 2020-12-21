@@ -234,24 +234,24 @@ public class AbstractDao<T> implements GenericDao<T> {
 		int   count =0;
 		try {
 			connection = myConnection();
-			connection.setAutoCommit(false);
+//			connection.setAutoCommit(false);
 			statement= connection.prepareStatement(sqlString,statement.RETURN_GENERATED_KEYS);
 			setParameter(statement, parameters);
 			statement.executeUpdate();
 			rs=statement.getGeneratedKeys();
-	while (rs.next()) {
+	      while (rs.next()) {
 		// khong de 1 thi co the de count 
 //		  count = rs.getInt("count(*)");
 		     count = rs.getInt(1);
 			}
-			connection.commit();
+//			connection.commit();
 			return count;
 		} catch (SQLException e) {
 			// TODO: handle exception
 			if (connection != null) {
 				try {
-					connection.rollback();
-				} catch (SQLException e2) {
+//					connection.rollback();
+				} catch (Exception e2) {
 					// TODO: handle exception
 					e2.printStackTrace();
 				}
