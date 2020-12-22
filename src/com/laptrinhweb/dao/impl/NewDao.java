@@ -7,6 +7,7 @@ import java.util.List;
 import com.laptrinhweb.dao.INewDao;
 import com.laptrinhweb.mapper.NewMapper;
 import com.laptrinhweb.model.NewModel;
+import com.laptrinhweb.paging.Pageble;
 
 public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 
@@ -181,12 +182,8 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 	}
 
 
-	@Override
-	public ArrayList<NewModel> findAll(Integer offset,Integer limit) throws ClassNotFoundException {
-		String sqlString = "select *From news limit ?,?;";
-		return  query(sqlString, new NewMapper() ,offset,limit);
-	}
 
+	
 
 	@Override
 	public int getTotalItem() throws ClassNotFoundException {
@@ -195,4 +192,29 @@ public class NewDao  extends AbstractDao<NewModel> implements INewDao {
 		return count(sql);
 	}
 
+
+	@Override
+	public ArrayList<NewModel> findAll(Pageble pageble) throws ClassNotFoundException{
+		StringBuilder sql= new StringBuilder("select *From news");
+	
+
+			if (pageble.getSorter() != null) {
+				sql.append("Order By "+pageble.getSorter().getSortName()+""+pageble.getSorter().getSortBy()+"");
+			}
+			
+			if (pageble.getOffset()!=null &&pageble.getLimit()!=null) {
+			sql.append("Limit "+pageble.getOffset()+","+pageble.getLimit()+"");
+			}
+			
+		return  query(sql.toString(), new NewMapper());
 }
+	
+	}
+
+//	@Override
+//	public ArrayList<NewModel> findAll(Pageble pageble) throws ClassNotFoundException {
+//	
+//		
+
+	
+

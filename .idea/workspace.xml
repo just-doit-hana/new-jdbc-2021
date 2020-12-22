@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="388817e7-25e3-46d0-a395-5e8a04de5b73" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/decorators.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/decorators.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/src1/main/webapp/common/admin/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/src1/main/webapp/common/admin/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/src1/main/webapp/common/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/src1/main/webapp/common/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/src1/main/webapp/views/admin/new/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/src1/main/webapp/views/admin/new/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/admin/NewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/admin/NewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/dao/INewDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/dao/INewDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/dao/impl/AbstractDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/dao/impl/AbstractDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/dao/impl/NewDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/dao/impl/NewDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/model/AbstractModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/model/AbstractModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/model/RoleModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/model/RoleModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/model/UserModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/service/INewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/service/INewService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/service/impl/NewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/service/impl/NewService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/utils/FormUtill.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/utils/FormUtill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/com/laptrinhweb/web/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/com/laptrinhweb/web/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/admin/NewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/admin/NewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/dao/INewDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/dao/INewDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/dao/impl/AbstractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/dao/impl/AbstractDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/dao/impl/NewDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/dao/impl/NewDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/model/AbstractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/model/AbstractModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/model/RoleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/model/RoleModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/service/INewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/service/INewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/service/impl/NewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/service/impl/NewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/utils/FormUtill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/utils/FormUtill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/laptrinhweb/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/laptrinhweb/web/HomeController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1m1UghMzt2idrz3afzJUpWXa3GY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="388817e7-25e3-46d0-a395-5e8a04de5b73" name="Default Changelist" comment="" />
+      <created>1608660710588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608660710588</updated>
+      <workItem from="1608660711798" duration="75000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import com.laptrinhweb.dao.INewDao;
 import com.laptrinhweb.model.NewModel;
+import com.laptrinhweb.paging.Pageble;
 import com.laptrinhweb.service.INewService;
 
 public class NewService implements INewService {
@@ -54,15 +55,19 @@ private INewDao newDao;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
 	}
+	
 	@Override
-	public ArrayList<NewModel> finAll(Integer offset,Integer limit) throws ClassNotFoundException {
-		return newDao.findAll(offset,limit);
+	public ArrayList<NewModel> finAll(Pageble pageble) throws ClassNotFoundException {
+		return newDao.findAll(pageble);
 	}
+	
 	@Override
 	public int getTotalitem() throws ClassNotFoundException {
 		// TODO Auto-generated method stub
 		return newDao.getTotalItem();
 	}
+
 
 }

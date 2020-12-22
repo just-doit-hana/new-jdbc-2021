@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.laptrinhweb.constant.SystemConstant;
 import com.laptrinhweb.model.NewModel;
+import com.laptrinhweb.paging.PageRequest;
+import com.laptrinhweb.paging.Pageble;
 import com.laptrinhweb.service.INewService;
+import com.laptrinhweb.sort.Sorter;
 import com.laptrinhweb.utils.FormUtill;
 
 /**
@@ -53,11 +56,14 @@ public class NewController extends HttpServlet {
 //		if (maxPageItem != null) {
 //			model.setMaxPageItem(Integer.parseInt(maxPageItem));
 //		}
-		try {
+	try {
+		
+//		Muon dung kieu nayf bat buoc phai co hai thu vien commons-login-1.2, commons-logging-1.2-javadoc.jar
 			NewModel model =FormUtill.toModel(NewModel.class,request);
-			Integer offset=(model.getPage()-1) * model.getMaxPageItem();
+			Pageble pageble = new PageRequest(model.getPage(),model.getMaxPageItem(),new Sorter(model.getSortName(),model.getSortBy()));
+//			Integer offset=(model.getPage()-1) * model.getMaxPageItem();
 			
-			model.setListResultList(newService.finAll(offset,model.getMaxPageItem()));
+			model.setListResultList(newService.finAll(pageble));
 			
 		    model.setTotalItem(newService.getTotalitem());  // total item
 			
@@ -72,6 +78,7 @@ public class NewController extends HttpServlet {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+
 		
 		
 	

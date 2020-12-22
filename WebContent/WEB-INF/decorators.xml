@@ -14,7 +14,7 @@
         <pattern>/*</pattern>
     </decorator>
     
-   <decorator name="login" page="login.jsp">
+   <decorator name="login" page="/src1/main/webapp/decorators/login.jsp">
         <pattern>/dang-nhap</pattern>
     </decorator>
 </decorators>

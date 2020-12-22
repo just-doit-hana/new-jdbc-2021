@@ -3,6 +3,7 @@ package com.laptrinhweb.dao;
 import java.util.ArrayList;
 
 import com.laptrinhweb.model.NewModel;
+import com.laptrinhweb.paging.Pageble;
 
 public interface INewDao extends GenericDao<NewModel> {
 	ArrayList<NewModel> findByCategoryId(Long CategoryID) throws ClassNotFoundException;
@@ -11,7 +12,9 @@ public interface INewDao extends GenericDao<NewModel> {
 	NewModel  findOne(Long id) throws ClassNotFoundException;
 	void update(NewModel update) throws ClassNotFoundException;
 	void delete(long id) throws ClassNotFoundException;
-	ArrayList<NewModel> findAll(Integer offset,Integer limit) throws ClassNotFoundException;
+	
 	int getTotalItem() throws ClassNotFoundException;
+	ArrayList<NewModel> findAll(Pageble pageble) throws ClassNotFoundException;
+	
 	
 }

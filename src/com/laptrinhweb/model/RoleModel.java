@@ -18,8 +18,6 @@ public class RoleModel extends AbstractModel<RoleModel> {
 		
 	}
 
-	
-
 	public String getName() {
 		return name;
 	}

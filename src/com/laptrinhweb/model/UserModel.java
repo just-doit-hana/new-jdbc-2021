@@ -2,12 +2,14 @@ package com.laptrinhweb.model;
 
 //su khac biet giu java class va java bean la java class khong co get set con java bean co 
 public class UserModel extends AbstractModel<UserModel> {
-	
+//	 authenrication la man hinh dang nhap  username pass 
+//	authoriazation laf khi dang nhap thanh cong roi thi no re redrect sang trang theo phan quyen admin , customer
 	private String userName;
 	private String fullName;
 	private String password;
 	private int status;
 	private Long roleId;
+	private RoleModel role = new RoleModel();
 	
 
 	public String getUserName() {
@@ -66,6 +68,14 @@ public class UserModel extends AbstractModel<UserModel> {
 		this.status = status;
 		this.roleId = roleId;
 		
+	}
+
+	public RoleModel getRole() {
+		return role;
+	}
+
+	public void setRole(RoleModel role) {
+		this.role = role;
 	}
 
 }

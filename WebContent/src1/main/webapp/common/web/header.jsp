@@ -1,3 +1,4 @@
+  <%@include file ="/src1/main/webapp/common/taglib.jsp" %>
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -13,7 +14,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href='<c:url value="/dang-nhap?action=login"/>'>Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Services</a>

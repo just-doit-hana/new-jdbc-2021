@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.laptrinhweb.dao.GenericDao;
 import com.laptrinhweb.mapper.Rowmapper;
+import com.laptrinhweb.model.NewModel;
 
 public class AbstractDao<T> implements GenericDao<T> {
 

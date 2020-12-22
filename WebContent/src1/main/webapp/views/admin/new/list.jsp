@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="main-content">
-	<form action="'<c:url value="/admin-new"/>'" id="formSubmit" method="get">
+	<form action="'<c:url value="/admin-new"/>'" id="formSubmit" method="GET">
 
 		<div class="main-content-inner">
 			<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -51,11 +51,11 @@
 								 <input type="hidden" value="" id="maxPageItem" name="maxPageItem" />
 									
 
-								<!--  <input	type="hidden" value="" id="sortName" name="sortName" />
+						           <input	type="hidden" value="" id="sortName" name="sortName" />
 									 
 									<input type="hidden" value="" id="sortBy" name="sortBy" /> 
 									
-									<input type="hidden" value="" id="type" name="type" />  -->
+									<!-- <input type="hidden" value="" id="type" name="type" />   -->
 							</div>
 						</div>
 					</div>
@@ -96,13 +96,15 @@
 	var limit = 2;
     $(function () {
         window.pagObj = $('#pagination').twbsPagination({
-            totalPages:${model.totalPage};
+            totalPages:totalPages;
             visiblePages: 10,
         	startPage: currentPage,
             onPageClick: function (event, page) {
                if(currentPage!=page){
                     $('#maxPageItem').val(limit);
     				$('#page').val(page);
+    		        $('#sortName').val('title');
+    				$('#sortBy').val('desc'); 
     				$('#formSubmit').submit();
             }
         })
