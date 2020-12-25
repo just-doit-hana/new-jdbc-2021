@@ -12,11 +12,11 @@
                 </small>
             </a>
         </div>
-        <div class="navbar-buttons navbar-header pull-right collapse navbar-collapse" role="navigation">
+        <div class="navbar-buttons navbar-header pull-right collapse navbar-collapse" >
             <ul class="nav ace-nav">
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        HELLO, ${USERMODEL.fullName}
+                        HELLO,${USERMODEL.fullName}
                     </a>
                     <li class="light-blue dropdown-modal">
                         <a href='<c:url value="/thoat?action=logout"/>'>
@@ -24,7 +24,7 @@
                             LOG OUT
                         </a>
                     </li>
-                </li>
+              
             </ul>
         </div>
     </div>

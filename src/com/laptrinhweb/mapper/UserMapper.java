@@ -11,30 +11,32 @@ import com.laptrinhweb.model.UserModel;
 
 public class UserMapper implements Rowmapper<UserModel> {
 
+	@SuppressWarnings("unused")
 	@Override
-	public UserModel mapRow(ResultSet rs) {
+	public UserModel mapRow(ResultSet resultSet) {
 		// TODO Auto-generated method stub
 		
 		UserModel users = new UserModel();
 		try {
-			users.setId(rs.getLong("id"));
-			users.setUserName(rs.getString("userName"));
-			users.setFullName(rs.getString("fullname"));
-			users.setPassword(rs.getString("password"));
-			users.setStatus(rs.getInt("status"));
+			UserModel user = new UserModel();
+			user.setId(resultSet.getLong("id"));
+			user.setUserName(resultSet.getString("username"));
+			user.setFullName(resultSet.getString("fullname"));
+			user.setPassword(resultSet.getString("password"));
+			user.setStatus(resultSet.getInt("status"));
 			try {
 				RoleModel role = new RoleModel();
-				role.setCode(rs.getString("code"));
-				role.setName(rs.getString("name"));
-				users.setRole(role);
+				role.setCode(resultSet.getString("code"));
+				role.setName(resultSet.getString("name"));
+				user.setRole(role);
+			
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				System.out.print(e.getMessage());
 			}
-		
-			return users;
+			return user;
 		} catch (SQLException e) {
 			return null;
-		}
+		}	
 	
 
 	}

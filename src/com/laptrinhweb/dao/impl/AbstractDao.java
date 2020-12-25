@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.laptrinhweb.dao.GenericDao;
 import com.laptrinhweb.mapper.Rowmapper;
-import com.laptrinhweb.model.NewModel;
 
 public class AbstractDao<T> implements GenericDao<T> {
 
@@ -28,6 +28,21 @@ public class AbstractDao<T> implements GenericDao<T> {
 		return con;
 
 	}
+
+//	ResourceBundle resourceBundle = ResourceBundle.getBundle("dba");
+//	
+//	public Connection myConnection() {
+//		try {
+//			Class.forName(resourceBundle.getString("driverName"));
+//			String url = resourceBundle.getString("url");
+//			String user = resourceBundle.getString("user");
+//			String password = resourceBundle.getString("password");
+//			return DriverManager.getConnection(url, user, password);
+//		} catch (ClassNotFoundException | SQLException e) {
+//			return null;
+//		}
+//	}
+//		
 
 	@Override
 	public <T> ArrayList<T> query(String sql, Rowmapper<T> rowmapper, Object... parameters) throws ClassNotFoundException {

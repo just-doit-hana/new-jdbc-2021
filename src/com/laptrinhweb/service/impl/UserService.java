@@ -10,12 +10,11 @@ public class UserService implements IUserService {
 @Inject
 private IUserDao userDao;
 	@Override
-	public UserModel finByUserNameAndPasswordAndStatus(String userName, String password, Integer status) {
-		// TODO Auto-generated method stub
+	public UserModel finByUserNameAndPasswordAndStatus(String userName, String password, Integer status) throws ClassNotFoundException {
 		return userDao.finByUserNameAndPasswordAndStatus(userName, password, status);
-	}
+}
+}
 
-		
-	}
+	
 
 	
